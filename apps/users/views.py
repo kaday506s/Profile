@@ -103,7 +103,7 @@ class UsersUpdateViewSets(GenericViewSet, UpdateModelMixin):
     serializer_class = UserSerializer
     permission_classes = (PostsPermissions,)
 
-    http_method_names = ["patch"]
+    http_method_names = ["patch", "put"]
 
     def get_object(self):
         user = Users.objects.get(id=self.kwargs["pk"])

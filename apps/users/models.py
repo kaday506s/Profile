@@ -20,6 +20,7 @@ class Interests(models.Model):
     name = models.CharField(
         max_length=255,
         unique=True,
+        db_index=True,
         verbose_name=_("Interests_name"),
     )
 
@@ -54,6 +55,7 @@ class Users(AbstractUser):
     email = models.EmailField(
         _('email address'),
         blank=False,
+        db_index=True,
         null=False
     )
     phone = models.CharField(
